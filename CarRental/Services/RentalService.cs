@@ -12,11 +12,12 @@ namespace CarRental.Services
         public double PricePerHour { get; private set; }
         public double PricePerDay { get; private set; }
         // Aqui fazendo uma dependência de forma inadequada, propositalmente, somente para depois a gente ver a melhor forma de fazer isso.
-        private BrasilTaxService _brazilTaxService = new BrasilTaxService();
-        public RentalService(double pricePerHour, double pricePerDay)
+        private ITaxService _taxService;
+        public RentalService(double pricePerHour, double pricePerDay, ITaxService taxService)
         {
             PricePerHour = pricePerHour;
             PricePerDay = pricePerDay;
+            _taxService = taxService;
         }
 
         public void ProcessInVoice(Rental rental)
@@ -33,7 +34,7 @@ namespace CarRental.Services
                 basicPayment = Math.Ceiling(duration.TotalDays) * PricePerDay;
             }
 
-            double tax = _brazilTaxService.Tax(basicPayment);
+            double tax = _taxService.Tax(basicPayment);
 
             rental.Invoice = new InVoice(basicPayment, tax);
         }

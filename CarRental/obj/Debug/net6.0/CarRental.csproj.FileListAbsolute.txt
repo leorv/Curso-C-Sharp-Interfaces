@@ -13,3 +13,4 @@ C:\Users\leona\source\repos\CarRental\CarRental\obj\Debug\net6.0\CarRental.dll
 C:\Users\leona\source\repos\CarRental\CarRental\obj\Debug\net6.0\ref\CarRental.dll
 C:\Users\leona\source\repos\CarRental\CarRental\obj\Debug\net6.0\CarRental.pdb
 C:\Users\leona\source\repos\CarRental\CarRental\obj\Debug\net6.0\CarRental.genruntimeconfig.cache
+C:\Users\leona\source\repos\CarRental\CarRental\obj\Debug\net6.0\CarRental.ImplicitNamespaceImports.cs

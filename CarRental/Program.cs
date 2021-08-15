@@ -24,7 +24,7 @@ namespace CarRental
 
             Rental rental = new Rental(start, end, new Vehicle(model));
 
-            RentalService rentalService = new RentalService(pricePerHour, pricePerDay);
+            RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrasilTaxService());
 
             rentalService.ProcessInVoice(rental);
             Console.WriteLine("\n\nIN VOICE:\n");
